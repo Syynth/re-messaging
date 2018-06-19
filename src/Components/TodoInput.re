@@ -11,10 +11,11 @@ let make = (~onSubmit, _children) => {
   initialState: () => "",
   reducer: (newText, _text) => ReasonReact.Update(newText),
   render: self =>
-    <div>
+    <div style=ReactDOMRe.Style.make(~padding="10px", ())>
       <input
         _type="text"
         value=self.state
+        style=ReactDOMRe.Style.make(~marginBottom="10px", ())
         onChange=(
           self.handle((evt, self) => evt |> valueFromEvent |> self.send)
         )
