@@ -17,22 +17,20 @@ let make = (~onSubmit, _children) => {
         value=self.state
         placeholder="Write something to do"
         style=ReactDOMRe.Style.make(~marginBottom="10px", ())
-        onChange=(
-          self.handle((evt, self) => evt |> valueFromEvent |> self.send)
-        )
+        onChange=(evt => evt |> valueFromEvent |> self.send)
         onKeyDown=(
           evt =>
             if (ReactEventRe.Keyboard.key(evt) == "Enter") {
               onSubmit(self.state);
-              (self.handle(((), self) => self.send("")))();
+              self.send("");
             }
         )
       />
       <button
         onClick=(
-          _ev => {
+          _ => {
             onSubmit(self.state);
-            (self.handle(((), self) => self.send("")))();
+            self.send("");
           }
         )>
         (ReasonReact.string("Add something"))

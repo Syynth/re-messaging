@@ -1,7 +1,7 @@
 {
   "name": "reason-scripts",
-  "sources": ["src", "src/Components"],
-  "bs-dependencies": ["reason-react", "@glennsl/bs-jest"],
+  "sources": ["src", "src/Components", "stories"],
+  "bs-dependencies": ["reason-react", "@glennsl/bs-jest", "bs-storybook"],
   "reason": {
     "react-jsx": 2
   },

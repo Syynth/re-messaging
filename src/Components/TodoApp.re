@@ -1,3 +1,5 @@
+[%bs.raw {|require('./TodoApp.css')|}];
+
 type todoState = {items: list(TodoItem.todoItem)};
 
 type todoAction =
