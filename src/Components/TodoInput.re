@@ -15,6 +15,7 @@ let make = (~onSubmit, _children) => {
       <input
         _type="text"
         value=self.state
+        placeholder="Write something to do"
         style=ReactDOMRe.Style.make(~marginBottom="10px", ())
         onChange=(
           self.handle((evt, self) => evt |> valueFromEvent |> self.send)
